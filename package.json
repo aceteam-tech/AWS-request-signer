@@ -1,6 +1,6 @@
 {
   "name": "aws-request-signer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sign the AWS requests",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
+    "encode-url-words": "^1.0.1",
     "lodash": "^4.17.11"
   }
 }

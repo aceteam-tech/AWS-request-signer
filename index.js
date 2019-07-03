@@ -1,5 +1,6 @@
 const crypto = require("crypto-js")
 const _ = require('lodash')
+const encodeUrlWords = require('encode-url-words')
 
 class Signer {
     constructor(credentials, request) {
@@ -19,7 +20,7 @@ class Signer {
         const date = new Date()
         const url = request.url
         credentials.host = url.host
-        request.route = url.pathname.encoded
+        request.route = encodeUrlWords(url.pathname)
 
         const canonical = this.canonicalRequest(credentials, request, date)
         const toSign = this.requestToSign(canonical, credentials, date)
